@@ -1,0 +1,8 @@
+/*
+* On positionne la taille de la liste à 100% et son overflow en auto
+* pour pouvoir utiliser le scroll infini sur celle ci
+*/
+.my-list {
+    height: 100%;
+    overflow: auto;
+}

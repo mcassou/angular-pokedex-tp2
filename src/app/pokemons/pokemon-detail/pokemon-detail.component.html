@@ -1,0 +1,44 @@
+<ng-container *ngIf="pokemon">
+    <mat-card class="pokemon-card">
+        <mat-grid-list cols="2" rowHeight="200px">
+            <!-- Affichage de l'image du pokemon et de son numéro -->
+            <mat-grid-tile
+                class="avatar"
+                [colspan]="1"
+                [rowspan]="1">
+                <img class="pokemon-avatar" src="../../../assets/img/official-artwork/{{pokemon.id}}.png" alt="{{pokemon.name}}">
+                <!-- On formate l'id du pokemon pour avoir un numéro à 3 chiffres -->
+                <p>No. {{pokemon.id | number : '3.0-0'}}</p>
+            </mat-grid-tile>
+            <!-- Affichage du nom du pokemon et du bouton pour jouer son cri -->
+            <mat-grid-tile
+              [colspan]="1"
+              [rowspan]="1">
+              <p>
+                {{pokemon.name}}
+                <!-- autoplay pour jouer a l'ouverture du pokemon detail
+                #cry est un id qu'on lui donne pour ensuite pouvoir faire ref a l'audio
+                on le fera sur la prochaine ligne en lui executant la fonction play() qui fonctionne avec les audios -->
+                <audio src="../../../assets/audio/{{pokemon.id}}.mp3" autoplay #cry></audio>
+                <button mat-icon-button (click)="cry.play()">
+                  <i class="material-icons">play_circle_outline</i>
+                </button>
+              </p>
+              <!-- Affichage du/des type(s) du pokemon, de sa taille et de son poids -->
+              <mat-chip-list aria-label="Types">
+                <mat-chip *ngFor="let type of pokemon.types">{{type}}</mat-chip>
+              </mat-chip-list>
+              <p>Taille: {{pokemon.height}} m</p>
+              <p>Poids: {{pokemon.weight}} kg</p>
+            </mat-grid-tile>
+            <!-- Affichage de la description du pokemon -->
+            <mat-grid-tile
+                [colspan]="2"
+                [rowspan]="1">
+              <p>{{pokemon.description}}</p>
+            </mat-grid-tile>
+        </mat-grid-list>
+    </mat-card>
+</ng-container>
+
+<button class="goback-button" mat-stroked-button (click)="goBack()">Go back</button>
