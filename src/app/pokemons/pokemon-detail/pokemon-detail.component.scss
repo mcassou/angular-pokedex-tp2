@@ -1,0 +1,25 @@
+.pokemon-card {
+    max-width: 400px;
+    margin-left: 40%;
+    margin-top: 50px;
+    margin-bottom: 50px;
+}
+  
+.pokemon-avatar {
+    width: 150px;
+}
+
+::ng-deep .mat-grid-tile .mat-figure {
+    display: block !important;
+}
+
+.avatar {
+    text-align: center;
+}
+
+.goback-button {
+    margin-right: 20px;
+    margin-left: 40%;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}

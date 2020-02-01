@@ -1,0 +1,18 @@
+<mat-form-field class="my-search">
+    <!-- A chaque changement dans la barre de recherche on appelle la fonction searchPokemon
+    en lui envoyant la valeur presente dans l'input d'id #searchBox -->
+    <input matInput #searchBox placeholder="Search Pokemon" (input)="searchPokemon(searchBox.value)" />
+</mat-form-field>
+<!-- Liste des pokemons avec un scroll infini géré par la fonction onScroll appelée à chaque scroll de la liste -->
+<mat-list *ngIf="pokemons"
+    class="my-list"
+    infiniteScroll
+    [scrollWindow]="false"
+    (scrolled)="onScroll()">
+    <h3 mat-subheader>Pokemons</h3>
+    <!-- Lors du click sur un pokemon on appelle la fonction selectPokemon en lui envoyant l'id de celui ci-->
+    <mat-list-item *ngFor="let pokemon of pokemons.data" (click)="selectPokemon(pokemon.id)">
+        <img matListAvatar src="../../../assets/img/sprites/{{pokemon.id}}.png" alt="{{pokemon.name}}">
+        <p matLine> {{pokemon.id}}. {{pokemon.name}} </p>
+    </mat-list-item>
+</mat-list>

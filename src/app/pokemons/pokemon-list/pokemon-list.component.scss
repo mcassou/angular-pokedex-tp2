@@ -1,0 +1,17 @@
+/*
+* On espace de quelques pixels en haut et a gauche
+* pour que la barre de recherche ne soit pas collée à la fenetre
+*/
+.my-search {
+    margin-top: 10px;
+    margin-left: 10px;
+}
+
+/*
+* On positionne la taille de la liste à 100% et son overflow en scroll
+* pour pouvoir utiliser le scroll infini sur celle ci
+*/
+.my-list {
+    height: 100%;
+    overflow: scroll;
+}
