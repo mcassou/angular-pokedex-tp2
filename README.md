@@ -2,7 +2,7 @@
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 8.3.20.
 
-Le code du TP2 se trouve dans la branche "tp2" et le code du TP3 dans la branche "tp3"
+**Le code du TP2 se trouve dans la branche "tp2" et le code du TP3 dans la branche "tp3"**
 
 ## Development server
 
