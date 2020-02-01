@@ -1,0 +1,6 @@
+<mat-sidenav-container class="pokedex-container">
+    <!-- Affichage de pokemon-list avec appel de la fonction showDetails2 pour récupérer l'id du pokemon selectionné -->
+    <mat-sidenav disableClose mode="side" opened><app-pokemon-list (selectedPokemonId)="showDetails2($event)"></app-pokemon-list></mat-sidenav>
+    <!-- Affichage de pokemon-detail en lui envoyant l'id du pokemon selectionné -->
+    <mat-sidenav-content><app-pokemon-detail [selectedPokemonId]="selectedPokemonId"></app-pokemon-detail></mat-sidenav-content>
+</mat-sidenav-container>
